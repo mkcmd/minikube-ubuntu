@@ -1,0 +1,13 @@
+[Unit]
+Description=Minikube boot mount
+After=network.target
+StartLimitIntervalSec=0
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=vagrant
+ExecStart="/usr/local/bin/minikube mount /boot:/boot"
+
+[Install]
+WantedBy=multi-user.target
