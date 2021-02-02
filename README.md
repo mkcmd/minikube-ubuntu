@@ -1,5 +1,5 @@
 # minikube-ubuntu
-Cancer free local kubernetes development 
+local kubernetes development 
 
 ## Getting started
 
