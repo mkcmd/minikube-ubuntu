@@ -28,10 +28,9 @@ systemctl enable docker && systemctl start docker
 # install minikube
 curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64
 install minikube-linux-amd64 /usr/local/bin/minikube
-eval $(minikube docker-env)
 runuser -l vagrant -c 'minikube start'
 echo "alias kubectl='minikube kubectl --'" >> /home/vagrant/.bashrc
-
+runuser -l vagrant -c 'minikube -p minikube docker-env' >> /home/vagrant/.bashrc
 # set up the minikube mount process as a service because it's annoying to have
 # to run it manually all the time
 cp /vagrant/minikube-mount.service /etc/systemd/system
